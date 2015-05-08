@@ -5,7 +5,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('newAccount');
+		$this->load->view('page1');
 	}
 	public function datainfo()
 	{
@@ -13,6 +13,6 @@ class Welcome extends CI_Controller {
 		
 		
 		
-		$this->load->view('page1');
+		$this->load->view('login');
 	}
 }

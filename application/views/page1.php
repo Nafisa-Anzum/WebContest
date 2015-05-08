@@ -37,57 +37,44 @@
             </li>
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#login-modal" data-toggle="modal">Log In</a></li>
-          </ul>
-
+          
         </div><!--/.nav-collapse -->
 
       </div>
     </nav>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    
+    <div class="container"
+     role="main">
+      <div class ="col-lg-10">
+        <a href="#" class="btn btn-primary">Add account</a>
+        <a href="#" class="btn btn-primary">Add Card</a>
+        <a href="#" class="btn btn-primary">Delete Card</a>
+        <a href="#" class="btn btn-primary">Delete Account</a>
 
-    <br/>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>The Infinite Loop</h1>
-        <p>Log In to view information</p>
-        
-      </div>
-    </div>
-
-    <div class="modal" id="login-modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title">Log in</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-
-            <div id="login-button">
-            <button class="btn btn-lg btn-primary btn-block"  type="submit">Sign in</button>
-            </div>
-            </form>
-          </div>
+        <div><br></div>
+        <p>Search Account</p>
+        <form class="form-search form-inline">
           
-        </div>
+          
+          <input type="number" id="inputPAN" class="form-control" placeholder="PAN" required="" autofocus="">
+          
+          <button class="btn btn-primary " id="submit_button" type="submit">Go</button>
+        </form>
+
       </div>
+      
+      <div class ="col-lg-10">
+
+      </div>
+
     </div>
+    
 
 
-    <script>
-        console.log("inside script");
-        document.getElementById('login-button').onclick = function() {
-            alert("Signing in...");
-            console.log("Signing in...");
-        }​;
-    </script>
+    
 
 
     <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.11.3.min.js"); ?>"></script>
