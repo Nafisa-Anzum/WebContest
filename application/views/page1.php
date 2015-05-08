@@ -8,7 +8,7 @@
     <title>Web-Contest</title>
 
     <!-- Bootstrap -->
-    <? php $this->load->helper(url); ?> 
+    <?php $this->load->helper('url'); ?>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" />
   </head>
 
@@ -69,20 +69,30 @@
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me"> Remember me
-              </label>
+
+            <div id="login-button">
+            <button class="btn btn-lg btn-primary btn-block"  type="submit">Sign in</button>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          </form>
+            </form>
           </div>
           
         </div>
       </div>
     </div>
 
-    <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.11.3.js"); ?>"></script>
+
+    <script>
+        console.log("inside script");
+        document.getElementById('login-button').onclick = function() {
+            alert("Signing in...");
+            console.log("Signing in...");
+        }​;
+    </script>
+
+
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jQuery-1.11.3.min.js"); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
+
+
   </body>
 </html>
