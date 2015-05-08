@@ -23,9 +23,17 @@ class CISModel extends CI_Model {
         $q="INSERT INTO accountinfo (name, address, balance,phoneNumber) VALUES('".$data['name']."','".$data['address']."',".$data['balance'].",".$data['phoneNumber'].")";
         $query= $this->db->query($q);
         $id="SELECT MAX(a_id) as mx FROM accountinfo";
-        $query=$this->db->query($id);
-        $id2=  $query->result(); echo $id;
-        //return $id2->'a_id';
+        $qq=$this->db->query($id);
+        if($qq->num_rows()>0)
+        {
+            foreach($qq->result() as $row)
+            {
+                $pid=$row->mx;
+            }
+        }
+        // echo $pid;die();
+
+        return $pid;
     }
 
     public function getUsers()

@@ -5,10 +5,13 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+        $this->load->view('page1');
+	}
+    public function registration(){
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->view('newAccount');
-	}
+    }
 	public function addUser()
 	{
          $this->load->model('CISModel');
@@ -20,7 +23,9 @@ class Welcome extends CI_Controller {
 
         //echo $data['name'];die();
         $id=$this->CISModel->addUser($data);
+        $data['id']=$id;
 
-        echo $id;die();
+        //$this->load->view('');
+
     }
 }
