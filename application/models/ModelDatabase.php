@@ -17,4 +17,5 @@ class ModelDatabase extends CI_Model {
 			return NULL;
 		}
 	}
+
 }

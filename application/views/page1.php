@@ -49,20 +49,40 @@
     <div class="container"
      role="main">
       <div class ="col-lg-10">
-        <a href="#" class="btn btn-primary">Add account</a>
+        <a href='<?php echo site_url('Welcome/registration'); ?>' class="btn btn-primary">Add account</a>
         <a href="#" class="btn btn-primary">Add Card</a>
         <a href="#" class="btn btn-primary">Delete Card</a>
         <a href="#" class="btn btn-primary">Delete Account</a>
 
         <div><br></div>
         <p>Search Account</p>
-        <form class="form-search form-inline">
-          
-          
-          <input type="number" id="inputPAN" class="form-control" placeholder="PAN" required="" autofocus="">
-          
-          <button class="btn btn-primary " id="submit_button" type="submit">Go</button>
-        </form>
+        <div class="form-search form-inline">
+            <?php
+            echo form_open('Welcome/searchRes',array('class' => 'form-horizontal style-form'));
+
+            $inputPAN=array('name'=>'inputPAN', 'id'=>'inputPAN', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Account number');
+
+            echo "
+                <fieldset>
+                <div class=\"form-group\">
+                    <div class=\"col-lg-10\">
+                        ".form_input($inputPAN)."
+                    </div>
+                </div>
+
+                <div class=\"form-group\">
+                    <div class=\"col-lg-10 col-lg-offset-2\">
+                        <button type=\"submit\" class=\"btn btn-primary\">Search</button>
+                    </div>
+                </div>
+                </div>
+            </fieldset>
+
+          ";
+            ?>
+
+            <?php echo form_close(); ?>
+        </div>
 
       </div>
       

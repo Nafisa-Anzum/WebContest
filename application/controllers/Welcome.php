@@ -5,6 +5,9 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+        $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('form_validation');
         $this->load->view('page1');
 	}
     public function registration(){
@@ -27,5 +30,17 @@ class Welcome extends CI_Controller {
 
         //$this->load->view('');
 
+    }
+
+    public function searchRes()
+    {
+        //echo "fasdf";die();
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $data['a_id']=$this->input->post('inputPAN');
+        $this->load->model('CISModel');
+        $data=$this->CISModel->getUser($data);
+
+        $this->load->view('searchRes',$data);
     }
 }
