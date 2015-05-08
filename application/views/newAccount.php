@@ -51,46 +51,61 @@
     <div><br></div>
     <div class="container" role="main">
 
-        <form class="form-horizontal">
-            <fieldset>
+    <div class="form-panel">
+        <?php
+            echo form_open('Welcome/addUser',array('class' => 'form-horizontal style-form'));
+
+            $inputName=array('name'=>'inputName', 'id'=>'inputName', 'type'=>'text','class'=>'form-control', 'placeholder'=>'Name');
+            $inputPhone=array('name'=>'inputPhone', 'id'=>'inputPhone', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Phone number');
+            $inputAddress=array('name'=>'inputAddress', 'id'=>'inputAddress', 'type'=>'text','class'=>'form-control', 'placeholder'=>'Address');
+            $inputBalance=array('name'=>'inputBalance', 'id'=>'inputBalance', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Balance');
+
+            echo "
+                <fieldset>
                 <legend>Add new Account</legend>
-                <div class="form-group">
-                    <label for="inputName" class="col-lg-2 control-label">Name</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                <div class=\"form-group\">
+                    <label for=\"inputName\" class=\"col-lg-2 control-label\">Name</label>
+                    <div class=\"col-lg-10\">
+                        ".form_input($inputName)."
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="inputPhone" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                        <input type="tel" class="form-control" id="inputPhone" placeholder="Phone number">
+                <div class=\"form-group\">
+                    <label for=\"inputPhone\" class=\"col-lg-2 control-label\">Password</label>
+                    <div class=\"col-lg-10\">
+                       ".form_input($inputPhone)."
                         </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="inputAddress" class="col-lg-2 control-label">Address</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="inputAddress" placeholder="Address"></textarea>
+                <div class=\"form-group\">
+                    <label for=\"inputAddress\" class=\"col-lg-2 control-label\">Address</label>
+                    <div class=\"col-lg-10\">
+                       ".form_input($inputAddress)."
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="inputBalance" class="col-lg-2 control-label">Balance</label>
-                    <div class="col-lg-10">
-                        <input type="number" class="form-control" id="inputPhone" placeholder="Balance">
+                <div class=\"form-group\">
+                    <label for=\"inputBalance\" class=\"col-lg-2 control-label\">Balance</label>
+                    <div class=\"col-lg-10\">
+                        ".form_input($inputBalance)."
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                <div class=\"form-group\">
+                    <div class=\"col-lg-10 col-lg-offset-2\">
+                        <button type=\"reset\" class=\"btn btn-default\">Cancel</button>
+                        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
                     </div>
                 </div>
                 </div>
             </fieldset>
-        </form>
+
+          ";
+        ?>
+
+        <?php echo form_close(); ?>
+
+    </div>
 
 
       </div>
