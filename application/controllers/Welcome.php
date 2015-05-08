@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
         $this->load->library('form_validation');
         $data['a_id']=$this->input->post('inputPAN');
         $this->load->model('CISModel');
-        $data=$this->CISModel->getUser($data);
+        $data['users']=$this->CISModel->getUser($data);
 
         $this->load->view('searchRes',$data);
     }

@@ -86,14 +86,15 @@
             <?php echo form_close(); ?>
         </div>
 
+
         <div class="form-panel">
             <?php
             echo form_open('Welcome/addUser',array('class' => 'form-horizontal style-form'));
-
-            $inputName=array('name'=>'inputName', 'id'=>'inputName', 'type'=>'text','class'=>'form-control', 'placeholder'=>$data['name']);
-            $inputPhone=array('name'=>'inputPhone', 'id'=>'inputPhone', 'type'=>'number','class'=>'form-control', 'placeholder'=>$data['phoneNumber']);
-            $inputAddress=array('name'=>'inputAddress', 'id'=>'inputAddress', 'type'=>'text','class'=>'form-control', 'placeholder'=>$data['address']);
-            $inputBalance=array('name'=>'inputBalance', 'id'=>'inputBalance', 'type'=>'number','class'=>'form-control', 'placeholder'=>$data['balance']);
+            foreach($users as $object){
+            $inputName=array('name'=>'inputName', 'id'=>'inputName', 'type'=>'text','class'=>'form-control', 'placeholder'=>$object->name);
+            $inputPhone=array('name'=>'inputPhone', 'id'=>'inputPhone', 'type'=>'number','class'=>'form-control', 'placeholder'=>$object->phoneNumber);
+            $inputAddress=array('name'=>'inputAddress', 'id'=>'inputAddress', 'type'=>'text','class'=>'form-control', 'placeholder'=>$object->address);
+            $inputBalance=array('name'=>'inputBalance', 'id'=>'inputBalance', 'type'=>'number','class'=>'form-control', 'placeholder'=>$object->balance);
 
             echo "
                 <fieldset>
@@ -136,7 +137,7 @@
             </fieldset>
 
           ";
-            ?>
+            }?>
 
             <?php echo form_close(); ?>
 

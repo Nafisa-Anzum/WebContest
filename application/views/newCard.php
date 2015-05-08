@@ -53,51 +53,46 @@
 
     <div class="form-panel">
         <?php
-            echo form_open('Welcome/addUser',array('class' => 'form-horizontal style-form'));
+            echo form_open('Welcome/addCard',array('class' => 'form-horizontal style-form'));
 
-            $inputName=array('name'=>'inputName', 'id'=>'inputName', 'type'=>'text','class'=>'form-control', 'placeholder'=>'Name');
-            $inputPhone=array('name'=>'inputPhone', 'id'=>'inputPhone', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Phone number');
-            $inputAddress=array('name'=>'inputAddress', 'id'=>'inputAddress', 'type'=>'text','class'=>'form-control', 'placeholder'=>'Address');
-            $inputBalance=array('name'=>'inputBalance', 'id'=>'inputBalance', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Balance');
-
+            $inputType=array('name'=>'inputType', 'id'=>'inputType', 'type'=>'text','class'=>'form-control', 'placeholder'=>'Card type');
+            $inputName=array('name'=>'inputName', 'id'=>'inputName', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Card holder name');
+            $inputPAN=array('name'=>'inputPAN', 'id'=>'inputAddress', 'type'=>'text','class'=>'form-control', 'placeholder'=>'PAN');
+            $inputExpiry=array('name'=>'inputExpiry', 'id'=>'inputExpiry', 'type'=>'date','class'=>'form-control', 'placeholder'=>'Expiry date');
+            $inputCvc=array('name'=>'inputCvc', 'id'=>'inputCvc', 'type'=>'number','class'=>'form-control', 'placeholder'=>'Card verification number');
             echo "
                 <fieldset>
-                <legend>Add new Account</legend>
                 <div class=\"form-group\">
-                    <label for=\"inputName\" class=\"col-lg-2 control-label\">Name</label>
+                    <div class=\"col-lg-10\">
+                        ".form_input($inputType)."
+                    </div>
+                </div>
+
+                <div class=\"form-group\">
                     <div class=\"col-lg-10\">
                         ".form_input($inputName)."
                     </div>
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"inputPhone\" class=\"col-lg-2 control-label\">Password</label>
                     <div class=\"col-lg-10\">
-                       ".form_input($inputPhone)."
-                        </div>
-                </div>
-
-                <div class=\"form-group\">
-                    <label for=\"inputAddress\" class=\"col-lg-2 control-label\">Address</label>
-                    <div class=\"col-lg-10\">
-                       ".form_input($inputAddress)."
+                        ".form_input($inputPAN)."
                     </div>
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"inputBalance\" class=\"col-lg-2 control-label\">Balance</label>
                     <div class=\"col-lg-10\">
-                        ".form_input($inputBalance)."
+                        ".form_input($inputExpiry)."
                     </div>
                 </div>
 
                 <div class=\"form-group\">
-                    <div class=\"col-lg-10 col-lg-offset-2\">
-                        <button id=\"cancelAcc\" type=\"reset\" class=\"btn btn-default\">Cancel</button>
-                        <button id=\"submitAcc\" type=\"submit\" class=\"btn btn-primary\">Submit</button>
+                    <div class=\"col-lg-10\">
+                        ".form_input($inputCvc)."
                     </div>
                 </div>
-                </div>
+                
+       
             </fieldset>
 
           ";
