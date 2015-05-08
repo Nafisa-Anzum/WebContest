@@ -51,15 +51,15 @@
       <div class ="col-lg-10">
         <a href="#" class="btn btn-primary">Add account</a>
         <a href="#" class="btn btn-primary">Add Card</a>
-        <a href="#" class="btn btn-primary">Delete Card</a>
-        <a href="#" class="btn btn-primary">Delete Account</a>
+        <a href="#del-card-modal" data-toggle="modal" class="btn btn-primary">Delete Card</a>
+        <a href="#del-acc-modal" data-toggle="modal" class="btn btn-primary">Delete Account</a>
 
         <div><br></div>
         <p>Search Account</p>
         <form class="form-search form-inline">
           
           
-          <input type="number" id="inputPAN" class="form-control" placeholder="PAN" required="" autofocus="">
+          <input type="number" id="inputPAN" class="form-control" placeholder="Account ID" required="" autofocus="">
           
           <button class="btn btn-primary " id="submit_button" type="submit">Go</button>
         </form>
@@ -73,7 +73,48 @@
     </div>
     
 
+    <div class="modal" id="del-card-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Delete Card</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-delcard">
+            
+            <label for="inputpan" class="sr-only">PAN</label>
+            <input type="number" id="inputpan" class="form-control" placeholder="PAN" required="" autofocus="">
+            
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Delete</button>
+          </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
 
+    <div class="modal" id="del-acc-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Delete Account</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-delacc">
+            
+            <label for="inputAid" class="sr-only">Email address</label>
+            <input type="number" id="inputAid" class="form-control" placeholder="Account number" required="" autofocus="">
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Delete</button>
+          </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
     
 
 
